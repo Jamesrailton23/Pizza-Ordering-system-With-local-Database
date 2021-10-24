@@ -24,66 +24,39 @@ namespace Pizza_Ordering_system_With_local_Database
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// dough_normal control.
+        /// tb_order_number control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton dough_normal;
+        protected global::System.Web.UI.WebControls.TextBox tb_order_number;
 
         /// <summary>
-        /// dough_glueten_free control.
+        /// rbl_dough control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton dough_glueten_free;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbl_dough;
 
         /// <summary>
-        /// button_dough_confirm control.
+        /// rbl_crust control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button_dough_confirm;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbl_crust;
 
         /// <summary>
-        /// rb_normal_crust control.
+        /// button_order_confirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rb_normal_crust;
-
-        /// <summary>
-        /// rb_deep_dish control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rb_deep_dish;
-
-        /// <summary>
-        /// rb_stuffed_crust control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rb_stuffed_crust;
-
-        /// <summary>
-        /// button_crust_confirm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button_crust_confirm;
+        protected global::System.Web.UI.WebControls.Button button_order_confirm;
     }
 }

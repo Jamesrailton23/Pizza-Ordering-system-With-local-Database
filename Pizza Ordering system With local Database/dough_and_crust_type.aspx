@@ -9,44 +9,27 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <br />
+            <p>Please enter the order number -
+                <asp:TextBox ID="tb_order_number" runat="server"></asp:TextBox></p>
             <h1>Dough Type</h1>
             <br />
-            <br />
-            <h3>&nbsp;
-                <asp:RadioButton ID="dough_normal" GroupName="dough" runat="server" Text="Normal dough" />
-            </h3>
-            <br />
-            <br />
-            <h3>&nbsp;
-                <asp:RadioButton ID="dough_glueten_free" GroupName="dough" runat="server" Text="Normal dough" />
-            </h3>
-            <br />
-            <br />
-            <p>&nbsp;
-              <asp:Button ID="button_dough_confirm" runat="server" OnClick="Button_dough_confirm_Click" Text="Confirm"/>
-            </p>
+            <asp:RadioButtonList ID="rbl_dough" runat="server" Height="179px">
+                <asp:ListItem Value="Normal">Normal</asp:ListItem>
+                <asp:ListItem>Gluten Free</asp:ListItem>
+            </asp:RadioButtonList>
             <h1>Crust type</h1>
             <br />
+            <asp:RadioButtonList ID="rbl_crust" runat="server" Height="245px">
+                <asp:ListItem>Normal</asp:ListItem>
+                <asp:ListItem>Stuffed</asp:ListItem>
+                <asp:ListItem>Deep Dish</asp:ListItem>
+            </asp:RadioButtonList>
             <br />
             <br />
-            <h3>&nbsp;
-                <asp:RadioButton ID="rb_normal_crust" GroupName="crust" runat="server" Text="Normal Crust" />
-            </h3>
-            <br />
-            <br />
-            <br />
-            <h3>&nbsp;
-                <asp:RadioButton ID="rb_deep_dish" GroupName="crust" runat="server" Text="Deep Dish" />
-            </h3>
-            <br />
-            <br />
-            <br />
-            <h3>&nbsp;
-                <asp:RadioButton ID="rb_stuffed_crust" GroupName="crust" runat="server" Text="Stuffed" />
-            </h3>
-            <br />
-             <p>&nbsp;
-              <asp:Button ID="button_crust_confirm" runat="server" OnClick="Button_crust_confirm_Click" Text="Confirm"/>
+            <p>
+                &nbsp;
+              <asp:Button ID="button_order_confirm" runat="server" OnClick="Button_crust_confirm_Click" Text="Confirm" />
             </p>
             <br />
             <br />

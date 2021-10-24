@@ -41,17 +41,16 @@
             <br />
             <p>
                 &nbsp;
-                VAT - 
+                VAT -
                 <asp:Label ID="lable_vat" runat="server"></asp:Label>
             </p>
             <br />
-            <h3>
-                
-                Total Cost - <asp:Label ID="label_total_cost" runat="server"></asp:Label>
+            <h3>Total Cost -
+                <asp:Label ID="label_total_cost" runat="server"></asp:Label>
             </h3>
             <br />
             <br />
-            <asp:CheckBox ID="checkbox_confirm_order" runat="server"  Text="Confirm Order" />
+            <asp:CheckBox ID="checkbox_confirm_order" runat="server" Text="Confirm Order" />
             <br />
             <br />
             <asp:Button ID="button_order" runat="server" OnClick="Button_order_Click" Text="ORDER" />
