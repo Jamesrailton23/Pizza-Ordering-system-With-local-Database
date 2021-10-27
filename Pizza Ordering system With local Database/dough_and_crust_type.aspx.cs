@@ -10,59 +10,63 @@ using System.Data;
 
 namespace Pizza_Ordering_system_With_local_Database
 {
-    public partial class dough_crust_type : System.Web.UI.Page
-    {
-        private SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-        private SqlCommand database_cmd;
+	public partial class dough_crust_type : System.Web.UI.Page
+	{
+		//SQL Connection
+		private SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
-        private string crust_choice;
-        private string dough_choice;
+		private SqlCommand database_cmd;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            connect.Open();
-        }
+		private string crust_choice;
+		private string dough_choice;
 
-        protected void Button_crust_confirm_Click(object sender, EventArgs e)
-        {
-            database_cmd = new SqlCommand("Update pizza_table set  Crust_type='" + crust_type() + "', Dough_type='" + dough_type() + "' where Order_number='" + tb_order_number.Text + "'", connect);
-            database_cmd.ExecuteNonQuery();
-            connect.Close();
-        }
+		protected void Page_Load(object sender, EventArgs e)
+		{
+		}
 
-        protected string dough_type()
-        {
-            switch (rbl_dough.SelectedIndex)
-            {
-                case 0:
-                    dough_choice = "Normal";
-                    break;
+		protected void Button_crust_confirm_Click(object sender, EventArgs e)
+		{
+			connect.Open();
+			database_cmd = new SqlCommand("Update pizza_order set CRUST_TYPE='" + crust_type() + "', DOUGH_TYPE='" + dough_type() + "' where ORDER_NUMBER='" + tb_order_number.Text + "'", connect);
+			database_cmd.ExecuteNonQuery();
+			connect.Close();
+		}
 
-                case 1:
-                    dough_choice = "Gluten free";
-                    break;
-            }
-            return dough_choice;
-        }
+		protected string dough_type()
+		{
+			//radio button switch statement to chose dough type
+			switch (rbl_dough.SelectedIndex)
+			{
+				case 0:
+					dough_choice = "Normal";
+					break;
 
-        protected string crust_type()
-        {
-            switch (rbl_crust.SelectedIndex)
-            {
-                case 0:
-                    crust_choice = "Normal";
-                    break;
+				case 1:
+					dough_choice = "Gluten free";
+					break;
+			}
+			return dough_choice;
+		}
 
-                case 1:
-                    crust_choice = "Stuffed";
-                    break;
+		protected string crust_type()
+		{
+			//radio button switch statement to chose crust type
+			switch (rbl_crust.SelectedIndex)
+			{
+				case 0:
+					crust_choice = "Normal";
+					break;
 
-                case 2:
-                    crust_choice = "Deep Dish";
-                    break;
-            }
+				case 1:
+					crust_choice = "Stuffed";
+					break;
 
-            return crust_choice;
-        }
-    }
+				case 2:
+					crust_choice = "Deep Dish";
+					break;
+			}
+
+			return crust_choice;
+		}
+	}
 }

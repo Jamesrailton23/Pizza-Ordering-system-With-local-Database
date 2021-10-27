@@ -67,9 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Pizzadatabase.mdf" />
-    <Content Include="App_Data\Pizzadatabase_log.ldf">
-      <DependentUpon>Pizzadatabase.mdf</DependentUpon>
+    <Content Include="App_Data\pizza_order.mdf" />
+    <Content Include="App_Data\pizza_order_log.ldf">
+      <DependentUpon>pizza_order.mdf</DependentUpon>
     </Content>
     <Content Include="database_order.aspx" />
     <Content Include="default.aspx" />
@@ -80,6 +80,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customer_infomation.cs" />
     <Compile Include="database_order.aspx.cs">
       <DependentUpon>database_order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

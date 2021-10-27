@@ -10,41 +10,46 @@ using System.Data;
 
 namespace Pizza_Ordering_system_With_local_Database
 {
-    public partial class pizza_size : System.Web.UI.Page
-    {
-        private SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-        private SqlCommand database_cmd;
+	public partial class pizza_size : System.Web.UI.Page
+	{
+		//opens SQL connection
+		private SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
-        public static int the_pizza_size;
+		private SqlCommand database_cmd;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            connect.Open();
-        }
+		public static int the_pizza_size;
 
-        protected void Pizza_size_13_Click(object sender, ImageClickEventArgs e)
-        {
-            the_pizza_size = 13;
-            sqlcmd();
-        }
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			// connect.Open();
+		}
 
-        protected void Pizza_size_15_Click(object sender, ImageClickEventArgs e)
-        {
-            the_pizza_size = 15;
-            sqlcmd();
-        }
+		#region pizza Size Buttons
 
-        protected void Pizza_size_17_Click(object sender, ImageClickEventArgs e)
-        {
-            the_pizza_size = 17;
-            sqlcmd();
-        }
+		protected void Pizza_size_13_Click(object sender, ImageClickEventArgs e)
+		{
+			sqlcmd(13);
+		}
 
-        public void sqlcmd()
-        {
-            database_cmd = new SqlCommand("Update pizza_table set Pizza_size= '" + the_pizza_size + "' where Order_number='" + tb_order_number.Text + "'", connect);
-            database_cmd.ExecuteNonQuery();
-            connect.Close();
-        }
-    }
+		protected void Pizza_size_15_Click(object sender, ImageClickEventArgs e)
+		{
+			sqlcmd(15);
+		}
+
+		protected void Pizza_size_17_Click(object sender, ImageClickEventArgs e)
+		{
+			sqlcmd(17);
+		}
+
+		#endregion pizza Size Buttons
+
+		public void sqlcmd(int Pizza)
+		{
+			//method to add size of pizza acording to button clicked
+			connect.Open();
+			database_cmd = new SqlCommand("Update pizza_order set PIZZA_SIZE = '" + Pizza + "' where ORDER_NUMBER='" + tb_order_number.Text + "'", connect);
+			database_cmd.ExecuteNonQuery();
+			connect.Close();
+		}
+	}
 }

@@ -7,10 +7,10 @@ using System.Web.SessionState;
 
 namespace Pizza_Ordering_system_With_local_Database
 {
-    public class Global : System.Web.HttpApplication
-    {
-        protected void Application_Start(object sender, EventArgs e)
-        {
-        }
-    }
+	public class Global : System.Web.HttpApplication
+	{
+		protected void Application_Start(object sender, EventArgs e)
+		{
+		}
+	}
 }
